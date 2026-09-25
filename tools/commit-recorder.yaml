@@ -1,0 +1,17 @@
+name: commit-recorder
+description: Record a new commit snapshot linking tree hash, parent commit, author metadata, and message.
+input_schema:
+  type: object
+  properties:
+    tree_oid:
+      type: string
+      description: The SHA-256 hash of the root tree snapshot.
+    message:
+      type: string
+      description: Commit message describing the changes.
+    parent_oid:
+      type: string
+      description: Optional SHA-256 hash of parent commit.
+  required:
+    - tree_oid
+    - message

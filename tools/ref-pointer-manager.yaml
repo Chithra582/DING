@@ -1,0 +1,18 @@
+name: ref-pointer-manager
+description: Read, create, update, or delete branch references and manage HEAD pointer.
+input_schema:
+  type: object
+  properties:
+    ref_name:
+      type: string
+      description: Name of the branch reference (e.g., refs/heads/main) or HEAD.
+    action:
+      type: string
+      enum: [read, update, create, delete]
+      description: Operation to perform on the reference.
+    target_oid:
+      type: string
+      description: Target commit hash when creating or updating a reference.
+  required:
+    - ref_name
+    - action

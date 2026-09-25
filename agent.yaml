@@ -1,0 +1,64 @@
+spec_version: "0.1.0"
+name: "ding-vcs-agent"
+version: "1.0.0"
+description: >
+  Autonomous version control and content-addressable storage intelligence agent for DING.
+  Manages repository lifecycle, object database hashing (blobs, trees, commits), DAG commit
+  traversals, tree diffing, and reference pointer safety.
+author: "Chithra R"
+license: "MIT"
+
+model:
+  preferred: "gemini-2.0-flash"
+  fallback:
+    - "gpt-4o"
+    - "claude-3-5-sonnet"
+  constraints:
+    temperature: 0.1
+    max_tokens: 4096
+
+skills:
+  - content-addressable-storage-engine
+  - commit-dag-manager
+  - branch-ref-controller
+  - tree-diff-analyzer
+
+tools:
+  - storage-hasher
+  - commit-recorder
+  - ref-pointer-manager
+  - diff-detector
+
+runtime:
+  max_turns: 10
+  temperature: 0.1
+  timeout: 120
+
+compliance:
+  risk_tier: standard
+  frameworks:
+    - gdpr
+    - soc2
+  data_governance:
+    pii_handling: redact
+    data_classification: internal
+  recordkeeping:
+    audit_logging: true
+    log_format: structured_json
+  supervision:
+    human_in_the_loop: conditional
+    override_capability: true
+    kill_switch: true
+
+tags:
+  - developer-tools
+  - version-control
+  - git-internals
+  - content-addressable-storage
+  - dag
+  - vcs
+  - python
+
+metadata:
+  domain: "developer-tools"
+  category: "Developer Tools"

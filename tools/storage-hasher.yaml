@@ -1,0 +1,15 @@
+name: storage-hasher
+description: Hash file content or directory trees into content-addressable storage objects.
+input_schema:
+  type: object
+  properties:
+    file_path:
+      type: string
+      description: Relative or absolute path to the file or directory.
+    object_type:
+      type: string
+      enum: [blob, tree, commit]
+      description: The category of object to serialize and store.
+  required:
+    - file_path
+    - object_type

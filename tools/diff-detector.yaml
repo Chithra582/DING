@@ -1,0 +1,13 @@
+name: diff-detector
+description: Compare working directory files against tree snapshots or compare two commit trees.
+input_schema:
+  type: object
+  properties:
+    base_tree_oid:
+      type: string
+      description: Base commit or tree OID to compare against.
+    target_tree_oid:
+      type: string
+      description: Target tree OID (or working directory if omitted).
+  required:
+    - base_tree_oid
